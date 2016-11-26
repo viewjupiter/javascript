@@ -32,8 +32,26 @@
   var surface = new THREE.MeshPhongMaterial({ambient: 0x1a1a1a}, {color: 0x0000cd});
   var planet = new THREE.SphereGeometry(20, 20, 15);
   var earth = new THREE.Mesh(planet, surface);
-  earth.position.set(250, 0, 0);
+earth.position.set(250, 0, 0);
   scene.add(earth);
+  var surface = new THREE.MeshPhongMaterial({ambient: 0x1a1a1a}, {color: 0xb22222});
+  var planet = new THREE.SphereGeometry(20, 20, 15);
+  var mars = new THREE.Mesh(planet, surface);
+  mars.position.set(500, 0, 0);
+  scene.add(mars);
+  
+  clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    var time = clock.getElapsedTime();
+    var e_angle = time * 0.8;
+    earth.position.set(250* Math.cos(e_angle), 250* Math.sin(e_angle), 0);
+    var m_angle = time * 0.8;
+    mars.position.set(500* Math.cos(m_angle), 500* Math.sin(m_angle), 0);
+    
   // Now, show what the camera sees on the screen:
   renderer.render(scene, camera);
+  }
+  animate();
 </script>
