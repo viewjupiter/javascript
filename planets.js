@@ -32,7 +32,7 @@
   var surface = new THREE.MeshPhongMaterial({ambient: 0x1a1a1a}, {color: 0x0000cd});
   var planet = new THREE.SphereGeometry(20, 20, 15);
   var earth = new THREE.Mesh(planet, surface);
-earth.position.set(250, 0, 0);
+  earth.position.set(250, 0, 0);
   scene.add(earth);
   var surface = new THREE.MeshPhongMaterial({ambient: 0x1a1a1a}, {color: 0xb22222});
   var planet = new THREE.SphereGeometry(20, 20, 15);
